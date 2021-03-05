@@ -1,7 +1,8 @@
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIAJTTP3B67FGDVCQ6A"
-  secret_key = "v5dxhR+xUio9mmeHjYbWiR7wwQ8y/SzXdlqZxe/6"
+  #Add your access key and secret key below
+  access_key = ""
+  secret_key = ""
 }
 
 resource "aws_vpc" "test_vpc" {
@@ -121,7 +122,8 @@ resource "aws_eip" "one" {
    ami           = "ami-00ddb0e5626798373"
    instance_type = "t2.micro"
    availability_zone = "us-east-1a"
-   key_name = "terraform-test"
+   key_name = ""
+   # Enter the .pem file name
 
  tags = {
      Name = "HelloWorld"
@@ -141,5 +143,5 @@ resource "aws_eip" "one" {
 
 } 
   output "server_public_ip" {
-        value = aws_eip.one.public_ip
+        value = aws_eip.one.public_ip  #This is used to show the public IP of the newly created instance when the execution is finished
    }
